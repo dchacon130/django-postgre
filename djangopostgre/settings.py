@@ -80,7 +80,8 @@ DATABASES = {
         'NAME': 'dbcrud_9cmd',
         'USER': 'dchacon130',
         'PASSWORD': 'qYcNBPT61Yoyb5lC3juFnoXHKhnKa5fy',
-        'HOST': 'localhost',
+        #'HOST': 'localhost',
+        'HOST': 'dpg-cjrnu58jbais73e53brg-a',
         'PORT': '5432',
     }
 }
