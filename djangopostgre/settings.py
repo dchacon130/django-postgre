@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-v(nl@(@)5utp5wn3iz$e(4dz)*nu0_dj5jm_*9yt$hp5q)+t7_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-crud-postgre.onrender.com', 'tu-dominio.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
