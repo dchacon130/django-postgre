@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  # Servicio de la base de datos PostgreSQL
+  db:
+    image: postgres:12
+    environment:
+      POSTGRES_DB: dbcrud_9cmd
+      POSTGRES_USER: dchacon130
+      POSTGRES_PASSWORD: qYcNBPT61Yoyb5lC3juFnoXHKhnKa5fy
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Servicio de la aplicación Django
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DJANGO_DB_HOST: dpg-cjrnu58jbais73e53brg-a
+      DJANGO_DB_PORT: 5432
+      DJANGO_DB_NAME: dbcrud_9cmd
+      DJANGO_DB_USER: dchacon130
+      DJANGO_DB_PASSWORD: qYcNBPT61Yoyb5lC3juFnoXHKhnKa5fy
+
+volumes:
+  postgres_data:

@@ -1,11 +1,14 @@
-FROM python:3.10
+# Usa la imagen base de Python
+FROM python:3.8
 
-RUN apt-get update && apt-get install -y python3-pip
-
+# Establece el directorio de trabajo en /app
 WORKDIR /app
 
-COPY . .
+# Copia el archivo requirements.txt al contenedor
+COPY requirements.txt /app/
 
-RUN pip3 install -r requirements.txt
+# Instala las dependencias del proyecto
+RUN pip install -r requirements.txt
 
-CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
+# Copia el contenido de la aplicación al contenedor
+COPY . /app/
